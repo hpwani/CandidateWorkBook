@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-end">
     <mat-form-field>
       <mat-label>Search Candidate</mat-label>
-      <input matInput (keyup)="applyFilter($event)" #input>
+      <input matInput [(ngModel)]="searchText" #input>
     </mat-form-field>
     <button mat-mini-fab color="primary" class="addBtn" (click)="addCandidate()">
       <mat-icon>add</mat-icon>
@@ -11,7 +11,7 @@
 </div>
 <div class="container">
   <div class="row">
-      <mat-card class="example-card mr-4 mt-4" *ngFor="let data of candidateData" [ngStyle]="{'background-color': data.status === 'Selected' ? '#7DCEA0' : data.status === 'Rejected' ? '#F1948A' : ''}">
+      <mat-card class="example-card mr-4 mt-4" *ngFor="let data of candidateData | filter: searchText" [ngStyle]="{'background-color': data.status === 'Selected' ? '#7DCEA0' : data.status === 'Rejected' ? '#F1948A' : ''}">
         <mat-card-header style="text-align: center;">
           <mat-card-title>{{data.candidateName + ' (' + data.gender + ')'}}</mat-card-title>
           <mat-card-subtitle>{{data.city}}</mat-card-subtitle>

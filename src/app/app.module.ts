@@ -23,6 +23,7 @@ import { CandidateDBService } from './candidate-db.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatRadioModule,
     MatCheckboxModule,
     MatSnackBarModule,
+    Ng2SearchPipeModule,
     InMemoryWebApiModule.forRoot(CandidateDBService)
   ],
   providers: [],

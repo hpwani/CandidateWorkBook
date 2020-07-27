@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class HomeComponent implements OnInit {
   candidateData: Array<any> = [];
+  searchText: any;
 
   constructor(
     public dialog: MatDialog,
@@ -36,8 +37,9 @@ export class HomeComponent implements OnInit {
   }
 
   applyFilter(event: Event) {
-    // const filterValue = (event.target as HTMLInputElement).value;
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
+    let dataSource
+    const filterValue = (event.target as HTMLInputElement).value;
+    //this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   addCandidate() {
