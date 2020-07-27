@@ -53,6 +53,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     InMemoryWebApiModule.forRoot(CandidateDBService)
   ],
   providers: [],
+  entryComponents: [AddCandidateComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
